@@ -11,9 +11,9 @@ import Api from './pages/Api';
 import Dark from './pages/Dark';
 import MainLayout from './layouts/MainLayout';
 import { ThemeProvider } from './pages/ThemeContext';
+import Counter from './pages/Counter';
 
 function App() {
-
   return (
     <div>
       <ThemeProvider>
@@ -50,6 +50,7 @@ function App() {
               </MainLayout>
             }
           />
+          <Route path="/Counter" element={<MainLayout><Counter></Counter></MainLayout>}></Route>
           <Route
             path="/Dark"
             element={

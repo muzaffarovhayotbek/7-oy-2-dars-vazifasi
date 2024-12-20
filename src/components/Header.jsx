@@ -8,10 +8,12 @@ function Header() {
 
   return (
     <div className="container">
-      <div className={`flex items-center justify-between p-4 ${theme === "light" ? "bg-slate-400" : "bg-gray-800"
-        }`}>
+      <div
+        className={`flex items-center justify-between p-4 ${
+          theme === 'light' ? 'bg-slate-400' : 'bg-gray-800'
+        }`}
+      >
         <ul className="list">
-   
           <li>
             <NavLink to="/Todo">Todo</NavLink>
           </li>
@@ -20,6 +22,9 @@ function Header() {
           </li>
           <li>
             <NavLink to="/Api">API</NavLink>
+          </li>
+          <li>
+            <NavLink to="/counter">counter</NavLink>
           </li>
           <li>
             <NavLink to="/Dark">Dark More</NavLink>
