@@ -1,11 +1,20 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../pages/ThemeContext';
 
 function Dark() {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <div className="container">
-      <h1 className="text-red-500 dark:text-blue-500 dark:bg-red-300">Dark</h1>
+    <div className="flex justify-center items-center mt-5">
+      <label className="cursor-pointer flex items-center gap-2">
+        <span>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</span>
+        <input
+          type="checkbox"
+          className="toggle toggle-lg"
+          onChange={toggleTheme}
+          checked={theme === 'dark'}
+        />
+      </label>
     </div>
   );
 }

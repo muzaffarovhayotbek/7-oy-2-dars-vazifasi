@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './Second.css';
+import { ThemeContext } from '../pages/ThemeContext';
 
 function Second() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
   const [data, setData] = useState([]);
+  const { theme } = useContext(ThemeContext); // ThemeContext'dan tema oling
 
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem('formData'));
@@ -42,7 +44,7 @@ function Second() {
   }
 
   return (
-    <div className="second">
+    <div className={`second ${theme === 'dark' ? 'dark' : 'light'}`}>
       <div className="container">
         <form className="form" onSubmit={handleSubmit}>
           <input

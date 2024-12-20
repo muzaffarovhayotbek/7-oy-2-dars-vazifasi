@@ -10,19 +10,13 @@ import Second from './pages/Second';
 import Api from './pages/Api';
 import Dark from './pages/Dark';
 import MainLayout from './layouts/MainLayout';
+import { ThemeProvider } from './pages/ThemeContext';
 
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    const body = document.body;
-    body.classList.remove('light', 'dark');
-    body.classList.add(theme);
-  }, [theme]);
 
   return (
     <div>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
+      <ThemeProvider>
         <Routes>
           <Route
             path="/"
@@ -65,7 +59,7 @@ function App() {
             }
           />
         </Routes>
-      </ThemeContext.Provider>
+      </ThemeProvider>
     </div>
   );
 }
