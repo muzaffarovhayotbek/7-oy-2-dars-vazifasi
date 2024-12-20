@@ -72,9 +72,7 @@ function Counter() {
       </div>
 
       <div className="mb-6">
-        <h2 className="text-2xl font-semibold text-center mb-4">
-          Counter 
-        </h2>
+        <h2 className="text-2xl font-semibold text-center mb-4">Counter</h2>
         <p className="text-xl text-center mb-4">{counterThree}</p>
         <div className="flex justify-center gap-4">
           <button
@@ -98,9 +96,7 @@ function Counter() {
         </div>
       </div>
 
-      <div className="text-center mt-6 text-xl font-semibold">
-        Total: {res}
-      </div>
+      <div className="text-center mt-6 text-xl font-semibold">Total: {res}</div>
     </div>
   );
 }
