@@ -12,6 +12,7 @@ import Dark from './pages/Dark';
 import MainLayout from './layouts/MainLayout';
 import { ThemeProvider } from './pages/ThemeContext';
 import Counter from './pages/Counter';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
@@ -50,7 +51,14 @@ function App() {
               </MainLayout>
             }
           />
-          <Route path="/Counter" element={<MainLayout><Counter></Counter></MainLayout>}></Route>
+          <Route
+            path="/Counter"
+            element={
+              <MainLayout>
+                <Counter></Counter>
+              </MainLayout>
+            }
+          ></Route>
           <Route
             path="/Dark"
             element={
@@ -59,6 +67,7 @@ function App() {
               </MainLayout>
             }
           />
+          <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
         </Routes>
       </ThemeProvider>
     </div>
